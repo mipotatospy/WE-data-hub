@@ -86,9 +86,9 @@ function App() {
     // localStorage.removeItem(STORAGE_KEYS.categoryIndex);
 
 
-    seedMockData()
-    .then((count) => console.log(`Seeded ${count} new docs`))
-    .catch((err) => console.error("Seed failed:", err));
+    // seedMockData()
+    // .then((count) => console.log(`Seeded ${count} new docs`))
+    // .catch((err) => console.error("Seed failed:", err));
   }, [isRightScreen]);
 
   return (

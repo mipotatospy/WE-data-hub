@@ -28,6 +28,7 @@ export function useScreen3AData() {
 
         if (!isMounted) return;
         setScreen3AData(data);
+        console.log("RETRIEVED SCREEN 3A DATA: ", data)
       } catch (err) {
         console.error("Error loading Screen 3A data:", err);
         if (!isMounted) return;
