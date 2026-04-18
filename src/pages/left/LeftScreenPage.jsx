@@ -45,6 +45,7 @@ import IntroScreen from "../../components/layout/IntroScreen.jsx";
 import Screen1A from "./Screen1A.jsx";
 import Screen2A from "./Screen2A.jsx";
 import Screen3A from "./Screen3A.jsx";
+import Screen4A from "./Screen4A.jsx";
 
 function LeftScreenTest({ presentation }) {
   const {
@@ -68,6 +69,7 @@ function LeftScreenTest({ presentation }) {
         {currentLeftScreen === "1A" && <Screen1A />}
         {currentLeftScreen === "2A" && <Screen2A />}
         {currentLeftScreen === "3A" && <Screen3A />}
+        {currentLeftScreen === "4A" && <Screen4A />}
       </div>
     );
   }
@@ -80,3 +82,4 @@ function LeftScreenTest({ presentation }) {
 }
 
 export default LeftScreenTest;
+

@@ -289,14 +289,16 @@ export function useScreen1BData(currentCategory) {
         return;
       }
 
-      if (cacheRef.current[normalizedCategory]) {
-        setState({
-          data: cacheRef.current[normalizedCategory],
-          loading: false,
-          error: "",
-        });
-        return;
-      }
+      // if (cacheRef.current[normalizedCategory]) {
+      //   setState({
+      //     data: cacheRef.current[normalizedCategory],
+      //     loading: false,
+      //     error: "",
+      //   });
+      //   console.log("Using cached category data for:", normalizedCategory);
+      //   console.log("Cached data:", cacheRef.current[normalizedCategory]);
+      //   return;
+      // }
 
       try {
         setState((prev) => ({
