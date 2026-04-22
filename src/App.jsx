@@ -1,70 +1,49 @@
-// import { Routes, Route, useLocation, Navigate } from "react-router-dom";
-// import LeftScreenPage from "./pages/left/LeftScreenPage";
-// import RightScreenPage from "./pages/right/RightScreenPage";
-// import FullScreenMessage from "./components/FullScreenMessage";
-// import { useDashboardData } from "./services/hooks/useDashboardData";
-// import { useScreenRotation } from "./services/hooks/useScreenRotation";
-
-// function App() {
-//   const location = useLocation();
-//   const isRightScreen = location.pathname === "/right";
-
-//   const {
-//     ready,
-//     error,
-//     wineResults,
-//     leaderboards,
-//     regions,
-//     grapes,
-//     prices,
-//   } = useDashboardData();
-
-//   const {
-//     showIntro,
-//     currentGroup,
-//     screenGroupIndex,
-//     totalGroups,
-//   } = useScreenRotation(ready, isRightScreen);
-
-//   if (error) return <FullScreenMessage text={`Error: ${error}`} />;
-//   if (!ready) return <FullScreenMessage text="Loading dashboard…" />;
-
-//   const sharedProps = {
-//     wineResults,
-//     leaderboards,
-//     regions,
-//     grapes,
-//     prices,
-//     showIntro,
-//     currentGroup,
-//     screenGroupIndex,
-//     totalGroups,
-//   };
-
-//   return (
-//     <Routes>
-//       <Route path="/" element={<LeftScreenPage {...sharedProps} />} />
-//       <Route path="/right" element={<RightScreenPage {...sharedProps} />} />
-//       <Route path="*" element={<Navigate to="/" replace />} />
-//     </Routes>
-//   );
-// }
-
-// export default App;
-
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import LeftScreenTest from "./pages/left/LeftScreenPage.jsx";
 import RightScreenTest from "./pages/right/RightScreenPage.jsx";
 import { usePresentationFlow } from "./hooks/usePresentationFlow.js";
-import { seedMockData } from "./seedMockData.js";
+import { ensureKioskAuth } from "./services/ensureKioskAuth.js";
+// import { seedMockData } from "./seedMockData.js";
 
 function App() {
   const location = useLocation();
   const isRightScreen = location.pathname === "/right";
-  const presentation = usePresentationFlow(isRightScreen);
+
+  const [authReady, setAuthReady] = useState(false);
+  const [authError, setAuthError] = useState(null);
 
   useEffect(() => {
+    let cancelled = false;
+
+    async function initAuth() {
+      try {
+        const user = await ensureKioskAuth();
+        console.log("Anonymous auth ready:", user?.uid);
+
+        if (!cancelled) {
+          setAuthReady(true);
+        }
+      } catch (error) {
+        console.error("Anonymous auth failed:", error);
+
+        if (!cancelled) {
+          setAuthError(error);
+        }
+      }
+    }
+
+    initAuth();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const presentation = usePresentationFlow(isRightScreen, authReady);
+
+  useEffect(() => {
+    if (!authReady) return;
     if (isRightScreen) return;
 
     const alreadyOpened = sessionStorage.getItem("rightScreenOpened");
@@ -82,14 +61,27 @@ function App() {
       console.warn("Popup blocked. Open /right manually.");
     }
 
-    // localStorage.removeItem(STORAGE_KEYS.phase);
-    // localStorage.removeItem(STORAGE_KEYS.categoryIndex);
+    // seedMockData()
+    //   .then((count) => console.log(`Seeded ${count} new docs`))
+    //   .catch((err) => console.error("Seed failed:", err));
+  }, [authReady, isRightScreen]);
 
+  if (authError) {
+    return (
+      <div style={{ padding: "24px", color: "white", background: "#111" }}>
+        <h2>Authentication failed</h2>
+        <pre>{String(authError?.message || authError)}</pre>
+      </div>
+    );
+  }
 
-    seedMockData()
-    .then((count) => console.log(`Seeded ${count} new docs`))
-    .catch((err) => console.error("Seed failed:", err));
-  }, [isRightScreen]);
+  if (!authReady) {
+    return (
+      <div style={{ padding: "24px", color: "white", background: "#111" }}>
+        Initializing kiosk authentication...
+      </div>
+    );
+  }
 
   return (
     <Routes>

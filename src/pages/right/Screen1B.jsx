@@ -65,15 +65,15 @@ function Screen1B({ category, data }) {
   const likedWinesChartData = buildLikedWinesChartData(topLikedWines);
 
   return (
-    <div className="screen-content screen-1b" >
+    <div className="screen-content screen" >
       <div className="screen-1b__header">
         <div>
           <h1 className="screen-1b__title">{formatCategoryTitle(category)}</h1>
         </div>
       </div>
 
-      <div className="screen-1b__layout">
-        <section className="screen-1b__section screen-1b__section--recognized">
+      <div className="screen__layout">
+        <section className="screen__section screen-1b__section--recognized">
           <div className="screen-1b__section-header">
             <h2>Top 5 Recognized Wines</h2>
           </div>
@@ -111,7 +111,7 @@ function Screen1B({ category, data }) {
           )}
         </section>
 
-        <section className="screen-1b__section screen-1b__section--regions">
+        <section className="screen__section screen-1b__section--regions">
           <div className="screen-1b__section-header">
             <h2>Top 3 Liked Regions</h2>
           </div>
@@ -141,7 +141,7 @@ function Screen1B({ category, data }) {
           </div>
         </section>
 
-        <section className="screen-1b__section screen-1b__section--wines">
+        <section className="screen__section screen-1b__section--wines">
           <div className="screen-1b__section-header">
             <h2>Top 4 Liked Wines</h2>
           </div>

@@ -6,6 +6,8 @@ import BubbleChart from "../../components/charts/BubbleChart.jsx";
 
 import { useScreen4BData } from "../../hooks/useScreen4Data";
 
+import ScreenHeader from "../../components/layout/ScreenHeader.jsx";
+
 function mapDescriptorByPriceForChart(items = []) {
   return items.map((item) => ({
     label: item.label,
@@ -38,29 +40,47 @@ export default function Screen4B({ categoryId, categoryLabel }) {
     );
   }
 
+  function formatCategoryTitle(category) {
+    if (!category) return "Category";
+  
+    const map = {
+      red: "Red Wines",
+      white: "White Wines",
+      rose: "Rosé Wines",
+      sparkling: "Sparkling Wines",
+      special: "Special Wines",
+    };
+  
+    return map[category] || category;
+  }
+
   return (
     
-    <div className="screen-page screen4b-page">
-      <div className="screen4b-top">
-        <ScreenPanel>
-          <h2>Descriptors by Price Range</h2>
-          <h3>Top descriptors associated with each perceived price tier</h3>
-          <StackedVerticalBarChart data={descriptorByPrice} />
-          <InsightText>
-            Each bar shows the three most used descriptors within that price range.
-          </InsightText>
-        </ScreenPanel>
+    <div className="screen screen4b-page">
+      <div className="screen-1b__header">
+        <div>
+          <h1 className="screen-1b__title">{formatCategoryTitle(categoryLabel)}</h1>
+        </div>
       </div>
 
-      <div className="screen4b-bottom">
-        <ScreenPanel>
-          <h2>{categoryLabel} Price vs Enjoyment</h2>
-          <h3>Most popular wines in this category</h3>
-          <BubbleChart items={bubbleItems} />
-          <InsightText>
-            Bubble size reflects how many participants tasted each wine.
-          </InsightText>
-        </ScreenPanel>
+      <div className="screen__layout">
+        <div className="screen__section screen-4b__descriptor-by-price">
+            <h2>Descriptors by Price Range</h2>
+            <h3>Top descriptors associated with each perceived price tier</h3>
+            <StackedVerticalBarChart data={descriptorByPrice} />
+            <InsightText>
+              Each bar shows the three most used descriptors within that price range.
+            </InsightText>
+        </div>
+
+        <div className="screen__section screen-4b__descriptor-by-price">
+            <h2>{categoryLabel} Price vs Enjoyment</h2>
+            <h3>Most popular wines in this category</h3>
+            <BubbleChart items={bubbleItems} />
+            <InsightText>
+              Bubble size reflects how many participants tasted each wine.
+            </InsightText>
+        </div>
       </div>
     </div>
   );

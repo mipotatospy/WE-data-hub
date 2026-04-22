@@ -7,29 +7,43 @@ export default function Screen3B({ categoryId, categoryLabel, data }) {
   const descriptorCloud = data?.descriptorCloud ?? [];
   const dualMetricByScore = data?.dualMetricByScore ?? [];
 
+  function formatCategoryTitle(category) {
+    if (!category) return "Category";
+  
+    const map = {
+      red: "Red Wines",
+      white: "White Wines",
+      rose: "Rosé Wines",
+      sparkling: "Sparkling Wines",
+      special: "Special Wines",
+    };
+  
+    return map[category] || category;
+  }
+
   return (
-    <div className="screen-page screen-3b">
-      <ScreenHeader
-        title={`${categoryLabel} Profile`}
-        subtitle="Descriptors and perceived style by enjoyment level"
-      />
+    <div className="screen">
+      <div className="screen-1b__header">
+        <div>
+          <h1 className="screen-1b__title">{formatCategoryTitle(categoryLabel)}</h1>
+        </div>
+      </div>
 
-      <div className="screen-3b-grid">
-        <ScreenPanel>
-          <WordCloudChart
-            title={`${categoryLabel} Descriptor Cloud`}
-            words={descriptorCloud}
-            maxWords={20}
-          />
-        </ScreenPanel>
-
-        <ScreenPanel>
-          <DualMetricByScoreChart
-            title={`${categoryLabel} Structure vs Drinkability`}
-            items={dualMetricByScore}
-            height={360}
-          />
-        </ScreenPanel>
+      <div className="screen__layout">
+        <div className="screen__section screen-3b__word-cloud">
+            <WordCloudChart
+              title={`${categoryLabel} Descriptor Cloud`}
+              words={descriptorCloud}
+              maxWords={20}
+            />
+        </div>
+        <div className="screen__section screen-3b__dualmetric">
+            <DualMetricByScoreChart
+              title={`${categoryLabel} Structure vs Drinkability`}
+              items={dualMetricByScore}
+              height={360}
+            />
+        </div>
       </div>
     </div>
   );
