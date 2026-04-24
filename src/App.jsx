@@ -4,7 +4,7 @@ import LeftScreenTest from "./pages/left/LeftScreenPage.jsx";
 import RightScreenTest from "./pages/right/RightScreenPage.jsx";
 import { usePresentationFlow } from "./hooks/usePresentationFlow.js";
 import { ensureKioskAuth } from "./services/ensureKioskAuth.js";
-// import { seedMockData } from "./seedMockData.js";
+import { seedMockData } from "./seedMockData.js";
 
 function App() {
   const location = useLocation();

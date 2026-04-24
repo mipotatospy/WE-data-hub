@@ -2,15 +2,15 @@ import { useEffect, useMemo, useState } from "react";
 import { requestPresentationRefresh } from "../services/requestPresentationRefresh";
 
 const INTRO_DURATION = 3000;
-const CATEGORY_DURATION = 30000;
+const CATEGORY_DURATION = 10000;
 const TRANSITION_DURATION = 2000;
 
 const categories = [
   { id: "red", label: "Red Wines" },
   { id: "white", label: "White Wines" },
-  { id: "rose", label: "Rosé Wines" },
+  // { id: "rose", label: "Rosé Wines" },
   { id: "sparkling", label: "Sparkling Wines" },
-  { id: "special", label: "Special Wines" },
+  // { id: "special", label: "Special Wines" },
 ];
 
 const GROUPS = [
@@ -176,7 +176,6 @@ export function usePresentationFlow(isRightScreen, authReady) {
         setTimeout(async () => {
           try {
             const result = await requestPresentationRefresh();
-            console.log("Presentation refresh result:", result);
           } catch (error) {
             console.error("Presentation refresh failed:", error);
           }

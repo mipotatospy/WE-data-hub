@@ -1,168 +1,3 @@
-// import { useEffect, useMemo, useRef, useState } from "react";
-// import {
-//   getScreen1AOverview,
-//   getScreen1BCategoryData,
-// } from "../services/firestore/screen1Selectors";
-
-// function normalizeCategory(category) {
-//   if (!category) return null;
-
-//   const value = String(category).trim().toLowerCase();
-
-//   const categoryMap = {
-//     reds: "red",
-//     red: "red",
-//     whites: "white",
-//     white: "white",
-//     rosés: "rose",
-//     rosé: "rose",
-//     roses: "rose",
-//     rose: "rose",
-//     sparkling: "sparkling",
-//     special: "special",
-//   };
-
-//   return categoryMap[value] || value;
-// }
-
-// function createInitialState() {
-//   return {
-//     data: null,
-//     loading: true,
-//     error: "",
-//   };
-// }
-
-// export function useScreen1AData() {
-//   const [state, setState] = useState(createInitialState);
-
-//   useEffect(() => {
-//     let isActive = true;
-
-//     async function loadData() {
-//       try {
-//         setState((prev) => ({
-//           ...prev,
-//           loading: true,
-//           error: "",
-//         }));
-
-//         const data = await getScreen1AOverview();
-
-//         if (!isActive) return;
-
-//         setState({
-//           data,
-//           loading: false,
-//           error: "",
-//         });
-//       } catch (error) {
-//         console.error("Failed to load Screen 1.A data:", error);
-
-//         if (!isActive) return;
-
-//         setState({
-//           data: null,
-//           loading: false,
-//           error: "Unable to load Screen 1.A data.",
-//         });
-//       }
-//     }
-
-//     loadData();
-
-//     return () => {
-//       isActive = false;
-//     };
-//   }, []);
-
-//   return {
-//     screen1AData: state.data,
-//     loading: state.loading,
-//     error: state.error,
-//   };
-// }
-
-// export function useScreen1BData(currentCategory) {
-//   const normalizedCategory = useMemo(
-//     () => normalizeCategory(currentCategory),
-//     [currentCategory]
-//   );
-
-//   const [state, setState] = useState(createInitialState);
-//   const cacheRef = useRef({});
-
-//   useEffect(() => {
-//     let isActive = true;
-
-//     async function loadData() {
-//       if (!normalizedCategory) {
-//         setState({
-//           data: null,
-//           loading: false,
-//           error: "No category provided.",
-//         });
-//         return;
-//       }
-
-//       if (cacheRef.current[normalizedCategory]) {
-//         setState({
-//           data: cacheRef.current[normalizedCategory],
-//           loading: false,
-//           error: "",
-//         });
-//         return;
-//       }
-
-//       try {
-//         setState((prev) => ({
-//           ...prev,
-//           loading: true,
-//           error: "",
-//         }));
-
-//         const data = await getScreen1BCategoryData(normalizedCategory);
-
-//         if (!isActive) return;
-
-//         cacheRef.current[normalizedCategory] = data;
-
-//         setState({
-//           data,
-//           loading: false,
-//           error: "",
-//         });
-//       } catch (error) {
-//         console.error(
-//           `Failed to load Screen 1.B data for "${normalizedCategory}":`,
-//           error
-//         );
-
-//         if (!isActive) return;
-
-//         setState({
-//           data: null,
-//           loading: false,
-//           error: `Unable to load Screen 1.B data for ${currentCategory}.`,
-//         });
-//       }
-//     }
-
-//     loadData();
-
-//     return () => {
-//       isActive = false;
-//     };
-//   }, [normalizedCategory, currentCategory]);
-
-//   return {
-//     screen1BData: state.data,
-//     categoryKey: normalizedCategory,
-//     loading: state.loading,
-//     error: state.error,
-//   };
-// }
-
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   getScreen1AOverview,
@@ -217,6 +52,56 @@ function createInitialState() {
   };
 }
 
+// export function useScreen1AData() {
+//   const [state, setState] = useState(createInitialState);
+
+//   useEffect(() => {
+//     let isActive = true;
+
+//     async function loadData() {
+//       try {
+//         setState((prev) => ({
+//           ...prev,
+//           loading: true,
+//           error: "",
+//         }));
+
+//         const data = await getScreen1AOverview();
+
+//         if (!isActive) return;
+
+//         setState({
+//           data,
+//           loading: false,
+//           error: "",
+//         });
+//       } catch (error) {
+//         console.error("Failed to load Screen 1.A data:", error);
+
+//         if (!isActive) return;
+
+//         setState({
+//           data: null,
+//           loading: false,
+//           error: "Unable to load Screen 1.A data.",
+//         });
+//       }
+//     }
+
+//     loadData();
+
+//     return () => {
+//       isActive = false;
+//     };
+//   }, []);
+
+//   return {
+//     screen1AData: state.data,
+//     loading: state.loading,
+//     error: state.error,
+//   };
+// }
+
 export function useScreen1AData() {
   const [state, setState] = useState(createInitialState);
 
@@ -246,7 +131,9 @@ export function useScreen1AData() {
         if (!isActive) return;
 
         setState({
-          data: null,
+          data: {
+            topRegions: [],  // Ensure empty data is available for charts
+          },
           loading: false,
           error: "Unable to load Screen 1.A data.",
         });
@@ -266,6 +153,77 @@ export function useScreen1AData() {
     error: state.error,
   };
 }
+
+// export function useScreen1BData(currentCategory) {
+//   const normalizedCategory = useMemo(
+//     () => normalizeCategory(currentCategory),
+//     [currentCategory]
+//   );
+
+//   const [state, setState] = useState(createInitialState);
+//   const cacheRef = useRef({});
+
+//   useEffect(() => {
+//     let isActive = true;
+
+//     async function loadData() {
+//       if (!normalizedCategory) {
+//         setState({
+//           data: null,
+//           loading: false,
+//           error: `Unsupported category: ${currentCategory || "unknown"}.`,
+//         });
+//         return;
+//       }
+
+//       try {
+//         setState((prev) => ({
+//           ...prev,
+//           loading: true,
+//           error: "",
+//         }));
+
+//         const data = await getScreen1BCategoryData(normalizedCategory);
+
+//         if (!isActive) return;
+
+//         cacheRef.current[normalizedCategory] = data;
+
+//         setState({
+//           data,
+//           loading: false,
+//           error: "",
+//         });
+//       } catch (error) {
+//         console.error(
+//           `Failed to load Screen 1.B data for "${normalizedCategory}":`,
+//           error
+//         );
+
+//         if (!isActive) return;
+
+//         setState({
+//           data: null,
+//           loading: false,
+//           error: `Unable to load Screen 1.B data for ${currentCategory}.`,
+//         });
+//       }
+//     }
+
+//     loadData();
+
+//     return () => {
+//       isActive = false;
+//     };
+//   }, [normalizedCategory, currentCategory]);
+
+//   return {
+//     screen1BData: state.data,
+//     categoryKey: normalizedCategory,
+//     loading: state.loading,
+//     error: state.error,
+//   };
+// }
 
 export function useScreen1BData(currentCategory) {
   const normalizedCategory = useMemo(
@@ -288,17 +246,6 @@ export function useScreen1BData(currentCategory) {
         });
         return;
       }
-
-      // if (cacheRef.current[normalizedCategory]) {
-      //   setState({
-      //     data: cacheRef.current[normalizedCategory],
-      //     loading: false,
-      //     error: "",
-      //   });
-      //   console.log("Using cached category data for:", normalizedCategory);
-      //   console.log("Cached data:", cacheRef.current[normalizedCategory]);
-      //   return;
-      // }
 
       try {
         setState((prev) => ({
@@ -327,7 +274,11 @@ export function useScreen1BData(currentCategory) {
         if (!isActive) return;
 
         setState({
-          data: null,
+          data: {
+            topRecognizedWines: [],
+            topLikedRegions: [],
+            topLikedWines: [],
+          },  // Provide empty data for charts
           loading: false,
           error: `Unable to load Screen 1.B data for ${currentCategory}.`,
         });

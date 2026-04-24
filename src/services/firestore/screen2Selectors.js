@@ -134,7 +134,6 @@ function mapDescriptorCounts(counts) {
 
 export async function getScreen2BData(categoryId) {
   if (!categoryId) {
-    console.log("[getScreen2BData] missing categoryId");
     return {
       categoryId: null,
       topLikedWines: [],
@@ -146,10 +145,6 @@ export async function getScreen2BData(categoryId) {
 
   const enjoymentDocId = `category_${categoryId}_top_wines_by_enjoyment`;
   const balanceDocId = `category_${categoryId}_top_wines_by_balance`;
-
-  console.log("[getScreen2BData] categoryId:", categoryId);
-  console.log("[getScreen2BData] enjoymentDocId:", enjoymentDocId);
-  console.log("[getScreen2BData] balanceDocId:", balanceDocId);
 
   const topEnjoymentRef = doc(db, "leaderboards", enjoymentDocId);
   const topBalanceRef = doc(db, "leaderboards", balanceDocId);
@@ -166,18 +161,9 @@ export async function getScreen2BData(categoryId) {
     getDoc(topBalanceRef),
     getDoc(descriptorsRef),
   ]);
-
-  console.log("[getScreen2BData] enjoyment exists:", topEnjoymentSnap.exists());
-  console.log("[getScreen2BData] balance exists:", topBalanceSnap.exists());
-  console.log("[getScreen2BData] descriptors exists:", descriptorsSnap.exists());
-
   const topEnjoymentData = topEnjoymentSnap.exists() ? topEnjoymentSnap.data() : {};
   const topBalanceData = topBalanceSnap.exists() ? topBalanceSnap.data() : {};
   const descriptorsData = descriptorsSnap.exists() ? descriptorsSnap.data() : {};
-
-  console.log("[getScreen2BData] enjoyment data:", topEnjoymentData);
-  console.log("[getScreen2BData] balance data:", topBalanceData);
-  console.log("[getScreen2BData] descriptors data:", descriptorsData);
 
   const result = {
     categoryId,
@@ -190,8 +176,6 @@ export async function getScreen2BData(categoryId) {
       descriptorsData.updatedAt ||
       null,
   };
-
-  console.log("[getScreen2BData] mapped result:", result);
 
   return result;
 }

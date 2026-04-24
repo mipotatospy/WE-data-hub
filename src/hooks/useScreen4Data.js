@@ -1,57 +1,3 @@
-// import { useEffect, useState } from "react";
-// import { getScreen4AData } from "../services/firestore/screen4Selectors";
-
-// export function useScreen4AData() {
-//   const [screen4AData, setScreen4AData] = useState({
-//     bubbleItems: [],
-//     priceTrend: [],
-//     updatedAt: {
-//       bubble: null,
-//       priceOverview: null,
-//     },
-//   });
-
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState("");
-
-//   useEffect(() => {
-//     let isMounted = true;
-
-//     async function load() {
-//       try {
-//         setLoading(true);
-//         setError("");
-
-//         const data = await getScreen4AData();
-
-//         if (!isMounted) return;
-//         setScreen4AData(data);
-//         console.log("RETRIEVED SCREEN 4A DATA:", data);
-//       } catch (err) {
-//         console.error("Error loading Screen 4A data:", err);
-//         if (!isMounted) return;
-//         setError(err.message || "Failed to load Screen 4A data.");
-//       } finally {
-//         if (isMounted) {
-//           setLoading(false);
-//         }
-//       }
-//     }
-
-//     load();
-
-//     return () => {
-//       isMounted = false;
-//     };
-//   }, []);
-
-//   return {
-//     screen4AData,
-//     loading,
-//     error,
-//   };
-// }
-
 import { useEffect, useState } from "react";
 import { getScreen4AData, getScreen4BData } from "../services/firestore/screen4Selectors";
 
@@ -80,7 +26,6 @@ export function useScreen4AData() {
 
         if (!isMounted) return;
         setScreen4AData(data);
-        console.log("RETRIEVED SCREEN 4A DATA:", data);
       } catch (err) {
         console.error("Error loading Screen 4A data:", err);
         if (!isMounted) return;
@@ -131,7 +76,6 @@ export function useScreen4BData(categoryId) {
 
         if (!isMounted) return;
         setScreen4BData(data);
-        console.log("RETRIEVED SCREEN 4B DATA:", categoryId, data);
       } catch (err) {
         console.error("Error loading Screen 4B data:", err);
         if (!isMounted) return;

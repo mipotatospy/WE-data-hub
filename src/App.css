@@ -124,7 +124,7 @@ body {
 }
 
 .screen-2b__word-cloud {
-  grid-column: 2 / 3;
+  grid-column: 3 / 4;
 }
 
 .screen-3b__word-cloud{
@@ -394,6 +394,7 @@ body {
 .screen2b-bottom-charts-container{
   display: flex;
   flex-direction: row;
+  width: 100vw;
 }
 
 .screen-page{

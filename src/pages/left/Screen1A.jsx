@@ -48,7 +48,7 @@
 //       <h2>Top Liked Regions</h2>
 
 //       <ItalyMap topRegions={screen1AData.topRegions} />
-//       <StackedHorizontalBarChart data={chartData} />
+//       <StackedHorizontalBarChart items={chartData} />
 //     </div>
 //   );
 // }
@@ -94,16 +94,12 @@ export default function Screen1A() {
     return <div>{error}</div>;
   }
 
-  if (!screen1AData || !screen1AData.topRegions?.length) {
-    return <div>No region data available.</div>;
-  }
-
   return (
     <div>
       <h2>Top Liked Regions</h2>
-
       <ItalyMap topRegions={screen1AData.topRegions} />
-      <StackedHorizontalBarChart items={chartData} />
+      <StackedHorizontalBarChart items={chartData.length > 0 ? chartData : []} />
+      {chartData.length === 0 && <div>No data available for regions.</div>}
     </div>
   );
 }

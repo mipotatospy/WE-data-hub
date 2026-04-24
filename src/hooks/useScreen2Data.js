@@ -59,7 +59,6 @@ export function useScreen2BData(categoryId) {
 
     async function loadData() {
       try {
-        console.log("[useScreen2BData] categoryId:", categoryId);
 
         setLoading(true);
         setError("");

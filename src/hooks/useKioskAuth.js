@@ -24,13 +24,11 @@ export function useKioskAuth() {
             setUser(cred.user);
             setReady(true);
           } catch (err) {
-            console.error("Anonymous sign-in failed:", err);
             setError(err.message || "Authentication failed");
             setReady(false);
           }
         });
       } catch (err) {
-        console.error("Auth listener failed:", err);
         setError(err.message || "Auth setup failed");
         setReady(false);
       }

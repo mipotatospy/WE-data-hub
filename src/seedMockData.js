@@ -7,548 +7,1197 @@ export async function seedMockData() {
   const batch = writeBatch(db);
 
   const docs = [
-    {
-      path: ["wineResults", "wine_001"],
-      data: {
-        wineId: "wine_001",
-        name: "Barolo DOCG 2019",
-        producer: "Cantina Alba",
-        vintage: 2019,
-        category: "red",
-        region: "Piemonte",
-        appellation: "Barolo DOCG",
-        country: "Italy",
-        grapeVarieties: ["Nebbiolo"],
-        imageUrl: "/images/barolo-docg-2019.png",
-        answerKey: {
-          wineName: "Barolo",
-          region: "Piemonte",
-          grapeVarieties: ["Nebbiolo"],
+    { 
+        path: [
+            "wineResults",
+            "white_01"
+        ], 
+        data: { 
+            wineId: "white_01", 
+            name: "Chlamys Vermentino di Sardegna DOC", 
+            producer: "Tenute Fois", 
+            vintage: null, 
+            category: "white", 
+            region: "Sardegna", 
+            appellation: "Vermentino di Sardegna DOC", 
+            country: "Italy", 
+            grapeVarieties: [
+                "Vermentino"
+            ], 
+            answerKey: { 
+                wineName: "Vermentino",
+                region: "Sardegna", 
+                grapeVarieties: [
+                    "Vermentino"
+                ],
+            }, 
+            isActive: true,
         },
-        isActive: true,
-        sortOrder: 1,
-      },
     },
+
     {
-      path: ["wineResults", "wine_002"],
-      data: {
-        wineId: "wine_002",
-        name: "Etna Rosso 2021",
-        producer: "Vulcano Wines",
-        vintage: 2021,
-        category: "red",
-        region: "Sicilia",
-        appellation: "Etna Rosso DOC",
-        country: "Italy",
-        grapeVarieties: ["Nerello Mascalese"],
-        imageUrl: "/images/etna-rosso-2021.png",
-        answerKey: {
-          wineName: "Etna Rosso",
-          region: "Sicilia",
-          grapeVarieties: ["Nerello Mascalese"],
+        path: [
+            "wineResults",
+            "white_02"
+        ], 
+        data: { 
+            wineId: "white_02", 
+            name: "Tziu Martine Vermentino di Sardegna DOC", 
+            producer: "Cantina Berritta", 
+            vintage: null, 
+            category: "white", 
+            region: "Sardegna", 
+            appellation: "Vermentino di Sardegna DOC", 
+            country: "Italy", 
+            grapeVarieties: [
+                "Vermentino"
+            ], 
+            answerKey: { 
+                wineName: "Vermentino",
+                region: "Sardegna", 
+                grapeVarieties: [
+                    "Vermentino"
+                ],
+            }, 
+            isActive: true,
         },
-        isActive: true,
-        sortOrder: 2,
-      },
     },
+
     {
-      path: ["wineResults", "wine_003"],
-      data: {
-        wineId: "wine_003",
-        name: "Chianti Classico 2020",
-        producer: "Tenuta Fiorentina",
-        vintage: 2020,
-        category: "red",
-        region: "Toscana",
-        appellation: "Chianti Classico DOCG",
-        country: "Italy",
-        grapeVarieties: ["Sangiovese"],
-        imageUrl: "/images/chianti-classico-2020.png",
-        answerKey: {
-          wineName: "Chianti Classico",
-          region: "Toscana",
-          grapeVarieties: ["Sangiovese"],
+        path: [
+            "wineResults",
+            "white_03"
+        ], 
+        data: { 
+            wineId: "white_03", 
+            name: "Aghiloja Oro Vermentino di Gallura DOCG Superiore", 
+            producer: "Cantina del Vermentino Monti", 
+            vintage: null, 
+            category: "white", 
+            region: "Sardegna", 
+            appellation: "Vermentino di Gallura DOCG Superiore", 
+            country: "Italy", 
+            grapeVarieties: [
+                "Vermentino"
+            ], 
+            answerKey: { 
+                wineName: "Vermentino",
+                region: "Sardegna", 
+                grapeVarieties: [
+                    "Vermentino"
+                ],
+            }, 
+            isActive: true,
         },
-        isActive: true,
-        sortOrder: 3,
-      },
     },
+
     {
-      path: ["wineResults", "wine_004"],
-      data: {
-        wineId: "wine_004",
-        name: "Amarone della Valpolicella 2018",
-        producer: "Valle Verona",
-        vintage: 2018,
-        category: "red",
-        region: "Veneto",
-        appellation: "Amarone della Valpolicella DOCG",
-        country: "Italy",
-        grapeVarieties: ["Corvina", "Rondinella"],
-        imageUrl: "/images/amarone-2018.png",
-        answerKey: {
-          wineName: "Amarone",
-          region: "Veneto",
-          grapeVarieties: ["Corvina", "Rondinella"],
+        path: [
+            "wineResults",
+            "white_04"
+        ], 
+        data: { 
+            wineId: "white_04", 
+            name: "Taerra Vermentino di Gallura DOCG Superiore", 
+            producer: "Cantina Tani", 
+            vintage: null, 
+            category: "white", 
+            region: "Sardegna", 
+            appellation: "Vermentino di Gallura DOCG Superiore", 
+            country: "Italy", 
+            grapeVarieties: [
+                "Vermentino"
+            ], 
+            answerKey: { 
+                wineName: "Vermentino",
+                region: "Sardegna", 
+                grapeVarieties: [
+                    "Vermentino"
+                ],
+            }, 
+            isActive: true,
         },
-        isActive: true,
-        sortOrder: 4,
-      },
     },
+
     {
-      path: ["wineResults", "wine_005"],
-      data: {
-        wineId: "wine_005",
-        name: "Franciacorta Brut NV",
-        producer: "Lago Spumanti",
-        vintage: null,
-        category: "sparkling",
-        region: "Lombardia",
-        appellation: "Franciacorta DOCG",
-        country: "Italy",
-        grapeVarieties: ["Chardonnay", "Pinot Nero"],
-        imageUrl: "/images/franciacorta-brut.png",
-        answerKey: {
-          wineName: "Franciacorta Brut",
-          region: "Lombardia",
-          grapeVarieties: ["Chardonnay", "Pinot Nero"],
+        path: [
+            "wineResults",
+            "white_05"
+        ], 
+        data: { 
+            wineId: "white_05", 
+            name: "Titus Grechetto Umbria IGT", 
+            producer: "Chiorri", 
+            vintage: null, 
+            category: "white", 
+            region: "Umbria", 
+            appellation: "Umbria IGT", 
+            country: "Italy", 
+            grapeVarieties: [
+                "Grechetto"
+            ], 
+            answerKey: { 
+                wineName: "Grechetto",
+                region: "Umbria", 
+                grapeVarieties: [
+                    "Grechetto"
+                ],
+            }, 
+            isActive: true,
         },
-        isActive: true,
-        sortOrder: 5,
-      },
     },
+
     {
-      path: ["wineResults", "wine_006"],
-      data: {
-        wineId: "wine_006",
-        name: "Prosecco Superiore DOCG",
-        producer: "Colline Venete",
-        vintage: null,
-        category: "sparkling",
-        region: "Veneto",
-        appellation: "Conegliano Valdobbiadene Prosecco Superiore DOCG",
-        country: "Italy",
-        grapeVarieties: ["Glera"],
-        imageUrl: "/images/prosecco-superiore.png",
-        answerKey: {
-          wineName: "Prosecco",
-          region: "Veneto",
-          grapeVarieties: ["Glera"],
-        },
+    path: [
+        "wineResults",
+        "white_06"
+    ], 
+    data: { 
+        wineId: "white_06", 
+        name: "Ilvania Coda di Volpe IGP", 
+        producer: "CorteCorbo", 
+        vintage: null, 
+        category: "white", 
+        region: "Campania", 
+        appellation: "Coda di Volpe IGP", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Coda di Volpe",
+            "Falanghina"
+        ], 
+        answerKey: { 
+            wineName: "Coda di Volpe",
+            region: "Campania", 
+            grapeVarieties: [
+                "Coda di Volpe",
+                "Falanghina"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 6,
-      },
     },
-    {
-      path: ["wineResults", "wine_007"],
-      data: {
-        wineId: "wine_007",
-        name: "Verdicchio dei Castelli di Jesi 2023",
-        producer: "Marche Bianco",
-        vintage: 2023,
-        category: "white",
-        region: "Marche",
-        appellation: "Verdicchio dei Castelli di Jesi DOC",
-        country: "Italy",
-        grapeVarieties: ["Verdicchio"],
-        imageUrl: "/images/verdicchio-2023.png",
-        answerKey: {
-          wineName: "Verdicchio",
-          region: "Marche",
-          grapeVarieties: ["Verdicchio"],
-        },
+},
+
+{
+    path: [
+        "wineResults",
+        "white_07"
+    ], 
+    data: { 
+        wineId: "white_07", 
+        name: "Narami Vermentino di Sardegna DOC", 
+        producer: "Deaddis", 
+        vintage: 2024, 
+        category: "white", 
+        region: "Sardegna", 
+        appellation: "Vermentino di Sardegna DOC", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Vermentino"
+        ], 
+        answerKey: { 
+            wineName: "Vermentino",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Vermentino"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 7,
-      },
     },
-    {
-      path: ["wineResults", "wine_008"],
-      data: {
-        wineId: "wine_008",
-        name: "Soave Classico 2023",
-        producer: "Monte Soave",
-        vintage: 2023,
-        category: "white",
-        region: "Veneto",
-        appellation: "Soave Classico DOC",
-        country: "Italy",
-        grapeVarieties: ["Garganega"],
-        imageUrl: "/images/soave-classico-2023.png",
-        answerKey: {
-          wineName: "Soave",
-          region: "Veneto",
-          grapeVarieties: ["Garganega"],
-        },
+},
+
+{
+    path: [
+        "wineResults",
+        "white_08"
+    ], 
+    data: { 
+        wineId: "white_08", 
+        name: "Funtanafrisca Isola dei Nuraghi IGT", 
+        producer: "Fradiles", 
+        vintage: null, 
+        category: "white", 
+        region: "Sardegna", 
+        appellation: "Isola dei Nuraghi IGT", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Local White Grapes"
+        ], 
+        answerKey: { 
+            wineName: "White Blend",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Nuragus"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 8,
-      },
     },
-    {
-      path: ["wineResults", "wine_009"],
-      data: {
-        wineId: "wine_009",
-        name: "Etna Bianco 2023",
-        producer: "Terre Laviche",
-        vintage: 2023,
-        category: "white",
-        region: "Sicilia",
-        appellation: "Etna Bianco DOC",
-        country: "Italy",
-        grapeVarieties: ["Carricante"],
-        imageUrl: "/images/etna-bianco-2023.png",
-        answerKey: {
-          wineName: "Etna Bianco",
-          region: "Sicilia",
-          grapeVarieties: ["Carricante"],
-        },
+},
+
+{
+    path: [
+        "wineResults",
+        "white_09"
+    ], 
+    data: { 
+        wineId: "white_09", 
+        name: "Nou Vermentino di Gallura DOCG", 
+        producer: "Cantina Li Duni", 
+        vintage: null, 
+        category: "white", 
+        region: "Sardegna", 
+        appellation: "Vermentino di Gallura DOCG", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Vermentino"
+        ], 
+        answerKey: { 
+            wineName: "Vermentino",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Vermentino"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 9,
-      },
     },
-    {
-      path: ["wineResults", "wine_010"],
-      data: {
-        wineId: "wine_010",
-        name: "Cerasuolo d’Abruzzo 2023",
-        producer: "Abruzzo Rosato",
-        vintage: 2023,
-        category: "rose",
-        region: "Abruzzo",
-        appellation: "Cerasuolo d’Abruzzo DOC",
-        country: "Italy",
-        grapeVarieties: ["Montepulciano"],
-        imageUrl: "/images/cerasuolo-2023.png",
-        answerKey: {
-          wineName: "Cerasuolo d’Abruzzo",
-          region: "Abruzzo",
-          grapeVarieties: ["Montepulciano"],
-        },
+},
+
+{
+    path: [
+        "wineResults",
+        "white_10"
+    ], 
+    data: { 
+        wineId: "white_10", 
+        name: "Fluusa Falanghina del Sannio DOC", 
+        producer: "Nifo Sarrapochiello", 
+        vintage: null, 
+        category: "white", 
+        region: "Campania", 
+        appellation: "Falanghina del Sannio DOC", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Falanghina"
+        ], 
+        answerKey: { 
+            wineName: "Falanghina",
+            region: "Campania", 
+            grapeVarieties: [
+                "Falanghina"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 10,
-      },
     },
-    {
-      path: ["wineResults", "wine_011"],
-      data: {
-        wineId: "wine_001",
-        name: "Etna Rosso",
-        producer: "",
-        vintage: null,
-        category: "red",
-        region: "Sicilia",
-        appellation: "Etna Rosso DOC",
-        country: "Italy",
-        grapeVarieties: ["Nerello Mascalese"],
-        imageUrl: "/images/etna-rosso.png",
-        answerKey: {
-          wineName: "Etna Rosso",
-          region: "Sicilia",
-          grapeVarieties: ["Nerello Mascalese"],
-        },
+},
+
+
+{
+    path: [
+        "wineResults",
+        "red_01"
+    ], 
+    data: { 
+        wineId: "red_01", 
+        name: "Kiri Cannonau di Sardegna DOC", 
+        producer: "Cantina del Vermentino Monti", 
+        vintage: null, 
+        category: "red", 
+        region: "Sardegna", 
+        appellation: "Cannonau di Sardegna DOC", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Cannonau"
+        ], 
+        answerKey: { 
+            wineName: "Cannonau",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Cannonau"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 1,
-      },
     },
-  
-    {
-      path: ["wineResults", "wine_012"],
-      data: {
-        wineId: "wine_002",
-        name: "Nero d'Avola",
-        producer: "",
-        vintage: null,
-        category: "red",
-        region: "Sicilia",
-        appellation: "Sicilia DOC",
-        country: "Italy",
-        grapeVarieties: ["Nero d’Avola"],
-        imageUrl: "/images/nero-davola.png",
-        answerKey: {
-          wineName: "Nero d'Avola",
-          region: "Sicilia",
-          grapeVarieties: ["Nero d’Avola"],
-        },
+},
+
+{
+    path: [
+        "wineResults",
+        "red_02"
+    ], 
+    data: { 
+        wineId: "red_02", 
+        name: "D’Erasmo Aglianico del Taburno DOCG Riserva", 
+        producer: "Nifo Sarrapochiello", 
+        vintage: null, 
+        category: "red", 
+        region: "Campania", 
+        appellation: "Aglianico del Taburno DOCG Riserva", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Aglianico"
+        ], 
+        answerKey: { 
+            wineName: "Aglianico",
+            region: "Campania", 
+            grapeVarieties: [
+                "Aglianico"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 2,
-      },
     },
-  
-    {
-      path: ["wineResults", "wine_013"],
-      data: {
-        wineId: "wine_003",
-        name: "Grillo",
-        producer: "",
-        vintage: null,
-        category: "white",
-        region: "Sicilia",
-        appellation: "Sicilia DOC",
-        country: "Italy",
-        grapeVarieties: ["Grillo"],
-        imageUrl: "/images/grillo.png",
-        answerKey: {
-          wineName: "Grillo",
-          region: "Sicilia",
-          grapeVarieties: ["Grillo"],
-        },
+},
+
+{
+    path: [
+        "wineResults",
+        "red_03"
+    ], 
+    data: { 
+        wineId: "red_03", 
+        name: "Angraris Mandrolisai Rosso Superiore DOC", 
+        producer: "Mandrolisai", 
+        vintage: null, 
+        category: "red", 
+        region: "Sardegna", 
+        appellation: "Mandrolisai Rosso Superiore DOC", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Bovale Sardo",
+            "Cannonau",
+            "Monica"
+        ], 
+        answerKey: { 
+            wineName: "Mandrolisai",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Bovale Sardo",
+                "Cannonau",
+                "Monica"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 3,
-      },
     },
-  
-    {
-      path: ["wineResults", "wine_014"],
-      data: {
-        wineId: "wine_004",
-        name: "Vermentino di Gallura",
-        producer: "",
-        vintage: null,
-        category: "white",
-        region: "Sardegna",
-        appellation: "Vermentino di Gallura DOCG",
-        country: "Italy",
-        grapeVarieties: ["Vermentino"],
-        imageUrl: "/images/vermentino-di-gallura.png",
-        answerKey: {
-          wineName: "Vermentino di Gallura",
-          region: "Sardinia",
-          grapeVarieties: ["Vermentino"],
-        },
+},
+
+{
+    path: [
+        "wineResults",
+        "red_04"
+    ], 
+    data: { 
+        wineId: "red_04", 
+        name: "Azzara Mandrolisai DOC", 
+        producer: "Mandrolisai", 
+        vintage: null, 
+        category: "red", 
+        region: "Sardegna", 
+        appellation: "Mandrolisai DOC", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Bovale Sardo",
+            "Cannonau",
+            "Monica"
+        ], 
+        answerKey: { 
+            wineName: "Mandrolisai",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Bovale Sardo",
+                "Cannonau",
+                "Monica"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 4,
-      },
     },
-  
-    {
-      path: ["wineResults", "wine_015"],
-      data: {
-        wineId: "wine_005",
-        name: "Cannonau",
-        producer: "",
-        vintage: null,
-        category: "red",
-        region: "Sardegna",
-        appellation: "Cannonau di Sardegna DOC",
-        country: "Italy",
-        grapeVarieties: ["Cannonau"],
-        imageUrl: "/images/cannonau.png",
-        answerKey: {
-          wineName: "Cannonau",
-          region: "Sardegna",
-          grapeVarieties: ["Cannonau"],
-        },
+},
+
+{
+    path: [
+        "wineResults",
+        "red_05"
+    ], 
+    data: { 
+        wineId: "red_05", 
+        name: "Bagadìu Isola dei Nuraghi Bovale IGT", 
+        producer: "Fradiles", 
+        vintage: null, 
+        category: "red", 
+        region: "Sardegna", 
+        appellation: "Isola dei Nuraghi IGT", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Bovale Sardo"
+        ], 
+        answerKey: { 
+            wineName: "Bovale",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Bovale Sardo"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 5,
-      },
     },
-  
-    {
-      path: ["wineResults", "wine_016"],
-      data: {
-        wineId: "wine_006",
-        name: "Vernaccia di Oristano",
-        producer: "",
-        vintage: null,
-        category: "special",
-        region: "Sardegna",
-        appellation: "Vernaccia di Oristano DOC",
-        country: "Italy",
-        grapeVarieties: ["Vernaccia"],
-        imageUrl: "/images/vernaccia-di-oristano.png",
-        answerKey: {
-          wineName: "Vernaccia di Oristano",
-          region: "Sardegna",
-          grapeVarieties: ["Vernaccia"],
-        },
+},
+
+{
+    path: [
+        "wineResults",
+        "red_06"
+    ], 
+    data: { 
+        wineId: "red_06", 
+        name: "Fradiles Mandrolisai DOC", 
+        producer: "Fradiles", 
+        vintage: null, 
+        category: "red", 
+        region: "Sardegna", 
+        appellation: "Mandrolisai DOC", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Bovale Sardo",
+            "Cannonau",
+            "Monica"
+        ], 
+        answerKey: { 
+            wineName: "Mandrolisai",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Bovale Sardo",
+                "Cannonau",
+                "Monica"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 6,
-      },
     },
-  
-    {
-      path: ["wineResults", "wine_017"],
-      data: {
-        wineId: "wine_007",
-        name: "Cirò Bianco",
-        producer: "",
-        vintage: null,
-        category: "white",
-        region: "Calabria",
-        appellation: "Cirò DOC Bianco",
-        country: "Italy",
-        grapeVarieties: ["Greco Bianco"],
-        imageUrl: "/images/ciro-bianco.png",
-        answerKey: {
-          wineName: "Cirò Bianco",
-          region: "Calabria",
-          grapeVarieties: ["Greco Bianco"],
-        },
+},
+
+{
+    path: [
+        "wineResults",
+        "red_07"
+    ], 
+    data: { 
+        wineId: "red_07", 
+        name: "Istentu Mandrolisai Rosso Superiore DOC", 
+        producer: "Fradiles", 
+        vintage: null, 
+        category: "red", 
+        region: "Sardegna", 
+        appellation: "Mandrolisai Rosso Superiore DOC", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Bovale Sardo",
+            "Cannonau",
+            "Monica"
+        ], 
+        answerKey: { 
+            wineName: "Mandrolisai",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Bovale Sardo",
+                "Cannonau",
+                "Monica"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 7,
-      },
     },
-  
-    {
-      path: ["wineResults", "wine_018"],
-      data: {
-        wineId: "wine_008",
-        name: "Cirò Rosato",
-        producer: "",
-        vintage: null,
-        category: "rose",
-        region: "Calabria",
-        appellation: "Cirò DOC Rosato",
-        country: "Italy",
-        grapeVarieties: ["Gaglioppo"],
-        imageUrl: "/images/ciro-rosato.png",
-        answerKey: {
-          wineName: "Cirò Rosato",
-          region: "Calabria",
-          grapeVarieties: ["Gaglioppo"],
-        },
+},
+
+{
+    path: [
+        "wineResults",
+        "red_08"
+    ], 
+    data: { 
+        wineId: "red_08", 
+        name: "Arcano Aglianico Sannio DOP Riserva", 
+        producer: "Terre Stregate", 
+        vintage: null, 
+        category: "red", 
+        region: "Campania", 
+        appellation: "Aglianico Sannio DOP Riserva", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Aglianico"
+        ], 
+        answerKey: { 
+            wineName: "Aglianico",
+            region: "Campania", 
+            grapeVarieties: [
+                "Aglianico"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 8,
-      },
     },
-  
-    {
-      path: ["wineResults", "wine_019"],
-      data: {
-        wineId: "wine_009",
-        name: "Aglianico",
-        producer: "",
-        vintage: null,
-        category: "red",
-        region: "Campania",
-        appellation: "Beneventano IGP",
-        country: "Italy",
-        grapeVarieties: ["Aglianico"],
-        imageUrl: "/images/aglianico.png",
-        answerKey: {
-          wineName: "Aglianico",
-          region: "Campania",
-          grapeVarieties: ["Aglianico"],
-        },
+},
+
+{
+    path: [
+        "wineResults",
+        "red_09"
+    ], 
+    data: { 
+        wineId: "red_09", 
+        name: "Antyco Taurasi DOCG", 
+        producer: "CorteCorbo", 
+        vintage: null, 
+        category: "red", 
+        region: "Campania", 
+        appellation: "Taurasi DOCG", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Aglianico"
+        ], 
+        answerKey: { 
+            wineName: "Aglianico",
+            region: "Campania", 
+            grapeVarieties: [
+                "Aglianico"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 9,
-      },
     },
-  
-    {
-      path: ["wineResults", "wine_020"],
-      data: {
-        wineId: "wine_010",
-        name: "Greco di Tufo",
-        producer: "",
-        vintage: null,
-        category: "white",
-        region: "Campania",
-        appellation: "Greco di Tufo DOCG",
-        country: "Italy",
-        grapeVarieties: ["Greco"],
-        imageUrl: "/images/greco-di-tufo.png",
-        answerKey: {
-          wineName: "Greco di Tufo",
-          region: "Campania",
-          grapeVarieties: ["Greco"],
-        },
+},
+
+{
+    path: [
+        "wineResults",
+        "red_10"
+    ], 
+    data: { 
+        wineId: "red_10", 
+        name: "Anthonia Campi Taurasini DOC", 
+        producer: "CorteCorbo", 
+        vintage: null, 
+        category: "red", 
+        region: "Campania", 
+        appellation: "Campi Taurasini DOC", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Aglianico",
+            "Syrah"
+        ], 
+        answerKey: { 
+            wineName: "Aglianico",
+            region: "Campania", 
+            grapeVarieties: [
+                "Aglianico",
+                "Syrah"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 10,
-      },
     },
-  
-    {
-      path: ["wineResults", "wine_021"],
-      data: {
-        wineId: "wine_011",
-        name: "Lambrusco DOC",
-        producer: "",
-        vintage: null,
-        category: "sparkling",
-        region: "Emilia-Romagna",
-        appellation: "Lambrusco DOC",
-        country: "Italy",
-        grapeVarieties: ["Lambrusco Salamino", "Lambrusco Grasparossa", "Lambrusco Sorbara"],
-        imageUrl: "/images/lambrusco-doc.png",
-        answerKey: {
-          wineName: "Lambrusco",
-          region: "Emilia-Romagna",
-          grapeVarieties: ["Lambrusco"],
-        },
+},
+
+{
+    path: [
+        "wineResults",
+        "red_11"
+    ], 
+    data: { 
+        wineId: "red_11", 
+        name: "Carammare Cannonau di Sardegna DOC", 
+        producer: "Ligios", 
+        vintage: null, 
+        category: "red", 
+        region: "Sardegna", 
+        appellation: "Cannonau di Sardegna DOC", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Cannonau"
+        ], 
+        answerKey: { 
+            wineName: "Cannonau",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Cannonau"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 11,
-      },
     },
-  
-    {
-      path: ["wineResults", "wine_022"],
-      data: {
-        wineId: "wine_012",
-        name: "Etna Rosato",
-        producer: "",
-        vintage: null,
-        category: "rose",
-        region: "Sicilia",
-        appellation: "Etna Rosato DOC",
-        country: "Italy",
-        grapeVarieties: ["Nerello Mascalese"],
-        imageUrl: "/images/etna-rosato.png",
-        answerKey: {
-          wineName: "Etna Rosato",
-          region: "Sicilia",
-          grapeVarieties: ["Nerello Mascalese"],
-        },
+},
+
+{
+    path: [
+        "wineResults",
+        "red_12"
+    ], 
+    data: { 
+        wineId: "red_12", 
+        name: "Cerasio Cannonau di Sardegna DOC", 
+        producer: "Pedres", 
+        vintage: null, 
+        category: "red", 
+        region: "Sardegna", 
+        appellation: "Cannonau di Sardegna DOC", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Cannonau"
+        ], 
+        answerKey: { 
+            wineName: "Cannonau",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Cannonau"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 12,
-      },
     },
-  
-    {
-      path: ["wineResults", "wine_023"],
-      data: {
-        wineId: "wine_013",
-        name: "Trebbiano Spoletino Macerato",
-        producer: "",
-        vintage: null,
-        category: "special",
-        region: "Umbria",
-        appellation: "Umbria IGT",
-        country: "Italy",
-        grapeVarieties: ["Trebbiano Spoletino"],
-        imageUrl: "/images/trebbiano-spoletino-macerato.png",
-        answerKey: {
-          wineName: "Trebbiano Spoletino Macerato",
-          region: "Umbria",
-          grapeVarieties: ["Trebbiano Spoletino"],
-        },
+},
+
+{
+    path: [
+        "wineResults",
+        "red_13"
+    ], 
+    data: { 
+        wineId: "red_13", 
+        name: "Chiaroscuro Isola dei Nuraghi IGT", 
+        producer: "Mulleri", 
+        vintage: 2021, 
+        category: "red", 
+        region: "Sardegna", 
+        appellation: "Isola dei Nuraghi IGT", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Monica",
+            "Ciliegiolo",
+            "Barbera Sarda"
+        ], 
+        answerKey: { 
+            wineName: "Monica, Ciliegiolo e Barbera Sarda",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Monica",
+                "Ciliegiolo",
+                "Barbera Sarda"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 13,
-      },
     },
-  
-    {
-      path: ["wineResults", "wine_024"],
-      data: {
-        wineId: "wine_014",
-        name: "Albana Frizzante",
-        producer: "",
-        vintage: null,
-        category: "sparkling",
-        region: "Emilia-Romagna",
-        appellation: "Romagna DOC",
-        country: "Italy",
-        grapeVarieties: ["Albana"],
-        imageUrl: "/images/albana-frizzante.png",
-        answerKey: {
-          wineName: "Albana Frizzante",
-          region: "Emilia-Romagna",
-          grapeVarieties: ["Albana"],
-        },
+},
+
+{
+    path: [
+        "wineResults",
+        "red_14"
+    ], 
+    data: { 
+        wineId: "red_14", 
+        name: "Arcuentu Terralba Bovale Superiore DOC", 
+        producer: "Cantine del Bovale", 
+        vintage: null, 
+        category: "red", 
+        region: "Sardegna", 
+        appellation: "Terralba Bovale Superiore DOC", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Bovale"
+        ], 
+        answerKey: { 
+            wineName: "Bovale",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Bovale"
+            ],
+        }, 
         isActive: true,
-        sortOrder: 14,
-      },
     },
-  ];
+},
+
+{
+    path: [
+        "wineResults",
+        "red_15"
+    ], 
+    data: { 
+        wineId: "red_15", 
+        name: "Terra Pintada Cannonau di Sardegna DOC", 
+        producer: "Cantine del Bovale", 
+        vintage: null, 
+        category: "red", 
+        region: "Sardegna", 
+        appellation: "Cannonau di Sardegna DOC", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Cannonau"
+        ], 
+        answerKey: { 
+            wineName: "Cannonau",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Cannonau"
+            ],
+        }, 
+        isActive: true,
+    },
+},
+
+{
+    path: [
+        "wineResults",
+        "red_16"
+    ], 
+    data: { 
+        wineId: "red_16", 
+        name: "Connubio Terre del Volturno IGT", 
+        producer: "Vestini Campagnano", 
+        vintage: 2011, 
+        category: "red", 
+        region: "Campania", 
+        appellation: "Terre del Volturno IGT", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Pallagrello Nero",
+            "Casavecchia"
+        ], 
+        answerKey: { 
+            wineName: "Pallagrello Nero e Casavecchia",
+            region: "Campania", 
+            grapeVarieties: [
+                "Pallagrello Nero",
+                "Casavecchia"
+            ],
+        }, 
+        isActive: true,
+    },
+},
+
+{
+    path: [
+        "wineResults",
+        "red_17"
+    ], 
+    data: { 
+        wineId: "red_17", 
+        name: "Serranu Isola dei Nuraghi IGT", 
+        producer: "Cantina Tani", 
+        vintage: null, 
+        category: "red", 
+        region: "Sardegna", 
+        appellation: "Isola dei Nuraghi IGT", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Cannonau",
+            "Muristellu",
+            "Merlot"
+        ], 
+        answerKey: { 
+            wineName: "Cannonau",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Cannonau",
+		            "Muristellu",
+		            "Merlot"
+            ],
+        }, 
+        isActive: true,
+    },
+},
+
+{
+    path: [
+        "wineResults",
+        "red_18"
+    ], 
+    data: { 
+        wineId: "red_18", 
+        name: "Caudio Irpinia DOP Sciascinoso", 
+        producer: "Tenuta Vitagliano", 
+        vintage: null, 
+        category: "red", 
+        region: "Campania", 
+        appellation: "Irpinia DOP", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Sciascinoso"
+        ], 
+        answerKey: { 
+            wineName: "Sciascinoso",
+            region: "Campania", 
+            grapeVarieties: [
+                "Sciascinoso"
+            ],
+        }, 
+        isActive: true,
+    },
+},
+
+{
+    path: [
+        "wineResults",
+        "red_19"
+    ], 
+    data: { 
+        wineId: "red_19", 
+        name: "Padres Isola dei Nuraghi IGT Rosso", 
+        producer: "Cantina Gianluigi Deaddis", 
+        vintage: 2022, 
+        category: "red", 
+        region: "Sardegna", 
+        appellation: "Isola dei Nuraghi IGT Rosso", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Cannonau",
+            "Bovale Sardo"
+        ], 
+        answerKey: { 
+            wineName: "Cannonau",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Cannonau"
+            ],
+        }, 
+        isActive: true,
+    },
+},
+
+{
+    path: [
+        "wineResults",
+        "sparkling_01"
+    ], 
+    data: { 
+        wineId: "sparkling_01", 
+        name: "Ventiventi Rosé Lambrusco di Modena DOC", 
+        producer: "Ventiventi", 
+        vintage: null, 
+        category: "sparkling", 
+        region: "Emilia-Romagna", 
+        appellation: "Lambrusco di Modena DOC", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Lambrusco di Sorbara"
+        ], 
+        answerKey: { 
+            wineName: "Lambrusco",
+            region: "Emilia-Romagna", 
+            grapeVarieties: [
+                "Lambrusco"
+            ],
+        }, 
+        isActive: true,
+    },
+},
+
+{
+    path: [
+        "wineResults",
+        "sparkling_02"
+    ], 
+    data: { 
+        wineId: "sparkling_02", 
+        name: "La Vie Lambrusco di Modena DOC", 
+        producer: "Ventiventi", 
+        vintage: null, 
+        category: "sparkling", 
+        region: "Emilia-Romagna", 
+        appellation: "Lambrusco di Modena DOC", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Lambrusco di Sorbara"
+        ], 
+        answerKey: { 
+            wineName: "Lambrusco",
+            region: "Emilia-Romagna", 
+            grapeVarieties: [
+                "Lambrusco"
+            ],
+        }, 
+        isActive: true,
+    },
+},
+
+{
+    path: [
+        "wineResults",
+        "sparkling_03"
+    ], 
+    data: { 
+        wineId: "sparkling_03", 
+        name: "Rouge de Noirs Lambrusco Salamino di Santa Croce DOC", 
+        producer: "Ventiventi", 
+        vintage: null, 
+        category: "sparkling", 
+        region: "Emilia-Romagna", 
+        appellation: "Lambrusco Salamino di Santa Croce DOC", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Lambrusco Salamino"
+        ], 
+        answerKey: { 
+            wineName: "Lambrusco",
+            region: "Emilia-Romagna", 
+            grapeVarieties: [
+                "Lambrusco"
+            ],
+        }, 
+        isActive: true,
+    },
+},
+
+{
+    path: [
+        "wineResults",
+        "sparkling_04"
+    ], 
+    data: { 
+        wineId: "sparkling_04", 
+        name: "Li Junchi Rosé Isola dei Nuraghi IGT", 
+        producer: "Cantina Li Duni", 
+        vintage: null, 
+        category: "sparkling", 
+        region: "Sardegna", 
+        appellation: "Isola dei Nuraghi IGT", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Cannonau",
+            "Monica",
+        ], 
+        answerKey: { 
+            wineName: "Cannonau Rosé",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Cannonau",
+                "Monica",
+            ],
+        }, 
+        isActive: true,
+    },
+},
+
+{
+    path: [
+        "wineResults",
+        "sparkling_05"
+    ], 
+    data: { 
+        wineId: "sparkling_05", 
+        name: "Pedres Brut Vermentino di Gallura DOCG", 
+        producer: "Pedres", 
+        vintage: null, 
+        category: "sparkling", 
+        region: "Sardegna", 
+        appellation: "Vermentino di Gallura DOCG", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Vermentino"
+        ], 
+        answerKey: { 
+            wineName: "Vermentino",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Vermentino"
+            ],
+        }, 
+        isActive: true,
+    },
+},
+
+{
+    path: [
+        "wineResults",
+        "sparkling_06"
+    ], 
+    data: { 
+        wineId: "sparkling_06", 
+        name: "Spumante Rosato Metodo Classico Brut", 
+        producer: "Ligios", 
+        vintage: null, 
+        category: "sparkling", 
+        region: "Sardegna", 
+        appellation: null, 
+        country: "Italy", 
+        grapeVarieties: [
+            "Native Red Grapes"
+        ], 
+        answerKey: { 
+            wineName: "Rosé Sparkling",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Native Red Grapes"
+            ],
+        }, 
+        isActive: true,
+    },
+},
+
+{
+    path: [
+        "wineResults",
+        "sparkling_07"
+    ], 
+    data: { 
+        wineId: "sparkling_07", 
+        name: "Pallium Falanghina Frizzante Campania IGP", 
+        producer: "Tenuta Vitagliano", 
+        vintage: null, 
+        category: "white", 
+        region: "Campania", 
+        appellation: "Campania IGP", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Falanghina"
+        ], 
+        answerKey: { 
+            wineName: "Falanghina",
+            region: "Campania", 
+            grapeVarieties: [
+                "Falanghina"
+            ],
+        }, 
+        isActive: true,
+    },
+},
+
+{
+    path: [
+        "wineResults",
+        "rose_01"
+    ], 
+    data: { 
+        wineId: "rose_01", 
+        name: "Ventiventi Rosé Lambrusco di Modena DOC", 
+        producer: "Ventiventi", 
+        vintage: null, 
+        category: "rose", 
+        region: "Emilia-Romagna", 
+        appellation: "Lambrusco di Modena DOC", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Lambrusco di Sorbara"
+        ], 
+        answerKey: { 
+            wineName: "Lambrusco",
+            region: "Emilia-Romagna", 
+            grapeVarieties: [
+                "Lambrusco"
+            ],
+        }, 
+        isActive: true,
+    },
+},
+
+{
+    path: [
+        "wineResults",
+        "rose_02"
+    ], 
+    data: { 
+        wineId: "rose_02", 
+        name: "Durusia Isola dei Nuraghi Rosato IGT", 
+        producer: "Fradiles", 
+        vintage: null, 
+        category: "rose", 
+        region: "Sardegna", 
+        appellation: "Isola dei Nuraghi Rosato IGT", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Bovale Sardo",
+            "Cannonau",
+            "Monica"
+        ], 
+        answerKey: { 
+            wineName: "Rosato",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Bovale Sardo",
+                "Cannonau",
+                "Monica"
+            ],
+        }, 
+        isActive: true,
+    },
+},
+
+
+{
+    path: [
+        "wineResults",
+        "rose_04"
+    ], 
+    data: { 
+        wineId: "rose_04", 
+        name: "Li Junchi Rosé Isola dei Nuraghi IGT", 
+        producer: "Cantina Li Duni", 
+        vintage: null, 
+        category: "rose", 
+        region: "Sardegna", 
+        appellation: "Isola dei Nuraghi IGT", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Native Red Grapes"
+        ], 
+        answerKey: { 
+            wineName: "Rosé Sparkling",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Native Red Grapes"
+            ],
+        }, 
+        isActive: true,
+    },
+},
+
+{
+    path: [
+        "wineResults",
+        "rose_06"
+    ], 
+    data: { 
+        wineId: "rose_06", 
+        name: "Spumante Rosato Metodo Classico Brut", 
+        producer: "Ligios", 
+        vintage: null, 
+        category: "rose", 
+        region: "Sardegna", 
+        appellation: null, 
+        country: "Italy", 
+        grapeVarieties: [
+            "Native Red Grapes"
+        ], 
+        answerKey: { 
+            wineName: "Rosé Sparkling",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Native Red Grapes"
+            ],
+        }, 
+        isActive: true,
+    },
+},
+
+{
+    path: [
+        "wineResults",
+        "special_01"
+    ], 
+    data: { 
+        wineId: "special_01", 
+        name: "Chiaroscuro Orange Wine", 
+        producer: "Mulleri", 
+        vintage: 2020, 
+        category: "special", 
+        region: "Sardegna", 
+        appellation: "Orange Wine", 
+        country: "Italy", 
+        grapeVarieties: [
+            "Nuragus",
+            "Local White Grapes"
+        ], 
+        answerKey: { 
+            wineName: "Orange Wine",
+            region: "Sardegna", 
+            grapeVarieties: [
+                "Nuragus"
+            ],
+        }, 
+        isActive: true,
+    },
+},
+
+    
+];
+
 
   for (const entry of docs) {
     const ref = doc(db, ...entry.path);
