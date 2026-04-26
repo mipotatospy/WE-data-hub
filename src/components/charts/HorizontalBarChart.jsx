@@ -50,7 +50,7 @@ function HorizontalBarChart({ items = [], height = 360, color = "#8B1E3F" }) {
             ticks: {
               color: "#FFFFFF",
               font: {
-                size: 13,
+                size: 18,
               },
             },
             grid: {
@@ -61,7 +61,7 @@ function HorizontalBarChart({ items = [], height = 360, color = "#8B1E3F" }) {
             ticks: {
               color: "#FFFFFF",
               font: {
-                size: 14,
+                size: 19,
               },
               autoSkip: false,
             },

@@ -48,7 +48,7 @@ function VerticalBarChart({ items = [], height = 340, color = "#D6B85A" }) {
             ticks: {
               color: "#FFFFFF",
               font: {
-                size: 14,
+                size: 19,
               },
               autoSkip: false,
               maxRotation: 0,
@@ -63,7 +63,7 @@ function VerticalBarChart({ items = [], height = 340, color = "#D6B85A" }) {
             ticks: {
               color: "#FFFFFF",
               font: {
-                size: 13,
+                size: 18,
               },
             },
             grid: {

@@ -101,14 +101,14 @@ export default function DualMetricByScoreChart({
               text: "Enjoyment Score",
               color: "#FFFFFF",
               font: {
-                size: 14,
+                size: 19,
                 weight: "600",
               },
             },
             ticks: {
               color: "#FFFFFF",
               font: {
-                size: 13,
+                size: 18,
               },
               autoSkip: false,
               maxRotation: 0,
@@ -125,7 +125,7 @@ export default function DualMetricByScoreChart({
             ticks: {
               color: "#FFFFFF",
               font: {
-                size: 13,
+                size: 18,
               },
             },
             grid: {
@@ -136,7 +136,7 @@ export default function DualMetricByScoreChart({
               text: "Average Score",
               color: "#FFFFFF",
               font: {
-                size: 14,
+                size: 19,
                 weight: "600",
               },
             },
@@ -148,7 +148,7 @@ export default function DualMetricByScoreChart({
             labels: {
               color: "#FFFFFF",
               font: {
-                size: 13,
+                size: 18,
               },
             },
           },

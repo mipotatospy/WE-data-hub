@@ -124,7 +124,7 @@ body {
 }
 
 .screen-2b__word-cloud {
-  grid-column: 3 / 4;
+  grid-column: 2 / 3;
 }
 
 .screen-3b__word-cloud{
@@ -202,7 +202,6 @@ body {
   margin-top: 12px;
   display: flex;
   width: 100%;
-  /* flex-wrap: wrap; */
   gap: 10px;
 }
 
@@ -316,7 +315,7 @@ body {
 }
 
 .screen3a-bottom {
-  flex: 1;
+  display: flex;
   min-height: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -391,12 +390,6 @@ body {
   padding: 50px;
 }
 
-.screen2b-bottom-charts-container{
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-}
-
 .screen-page{
   display: flex;
   flex-direction: column;
@@ -404,6 +397,55 @@ body {
   padding: 50px;
   gap: 50px;
   height: 100vh;
+}
+
+.screen2b {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 18px;
+}
+
+.screen2b .screen-1b__header {
+  flex-shrink: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.screen2b .screen-1b__title {
+  font-size: 56px;
+}
+
+.screen2b-layout {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 0.9fr 2.1fr;
+  grid-template-rows: 1.05fr 0.95fr;
+  gap: 18px;
+}
+
+.screen2b-top {
+  grid-column: 1 / 3;
+  min-height: 0;
+}
+
+.screen2b-balance {
+  grid-column: 1 / 2;
+  min-width: 0;
+  min-height: 0;
+}
+
+.screen2b-cloud {
+  grid-column: 2 / 3;
+  min-width: 0;
+  min-height: 0;
+}
+
+.screen2b h3 {
+  margin: 0 0 12px;
+  text-align: center;
+  font-size: 18px;
 }
 
 .screen-3b-grid{
@@ -418,4 +460,47 @@ body {
 
 .screen4b-bottom{
   margin: 50px;
+}
+
+.screen3b {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 18px;
+}
+
+.screen3b .screen-1b__header {
+  flex-shrink: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.screen3b .screen-1b__title {
+  font-size: 56px;
+}
+
+.screen3b-layout {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.35fr 0.65fr;
+  gap: 18px;
+}
+
+.screen3b-cloud,
+.screen3b-dualmetric {
+  min-height: 0;
+  min-width: 0;
+}
+
+.screen3b-cloud {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen3b-dualmetric {
+  display: flex;
+  flex-direction: column;
 }

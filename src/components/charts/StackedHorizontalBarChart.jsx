@@ -182,7 +182,7 @@ function StackedHorizontalBarChart({
             ticks: {
               color: "#FFFFFF",
               font: {
-                size: 13,
+                size: 18,
               },
               maxRotation: 0,
               minRotation: 0,

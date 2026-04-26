@@ -70,7 +70,7 @@ export default function LineChart({
           x: {
             ticks: {
               color: "#FFFFFF",
-              font: { size: 13 },
+              font: { size: 18 },
             },
             grid: {
               display: false,
@@ -82,7 +82,7 @@ export default function LineChart({
             max: yMax,
             ticks: {
               color: "#FFFFFF",
-              font: { size: 13 },
+              font: { size: 18 },
             },
             grid: {
               color: "rgba(255,255,255,0.18)",
@@ -92,7 +92,7 @@ export default function LineChart({
               text: "Enjoyment Score",
               color: "#FFFFFF",
               font: {
-                size: 14,
+                size: 19,
                 weight: "600",
               },
             },
@@ -107,7 +107,7 @@ export default function LineChart({
             text: title,
             color: "#FFFFFF",
             font: {
-              size: 16,
+              size: 21,
               weight: "600",
             },
             padding: {

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { requestPresentationRefresh } from "../services/requestPresentationRefresh";
 
 const INTRO_DURATION = 3000;
-const CATEGORY_DURATION = 10000;
+const CATEGORY_DURATION = 3000;
 const TRANSITION_DURATION = 2000;
 
 const categories = [

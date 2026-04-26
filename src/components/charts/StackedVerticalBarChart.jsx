@@ -235,7 +235,7 @@ function StackedVerticalBarChart({ data = [], height = 380 }) {
             ticks: {
               color: "#FFFFFF",
               font: {
-                size: 20,
+                size: 25,
               },
               maxRotation: 0,
               minRotation: 0,

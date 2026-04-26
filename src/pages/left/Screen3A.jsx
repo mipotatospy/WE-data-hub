@@ -111,10 +111,7 @@ export default function Screen3A() {
     <div className="screen-page screen3a-page">
       <div className="screen3a-top">
         <ScreenPanel>
-          {/* <ScreenHeader
-            title="Top 10 Most Liked Wines"
-            subtitle="Ranked by average enjoyment"
-          /> */}
+          
           <h2>Top 10 Most Liked Wines</h2>
           <h3>Ranked by average enjoyment</h3>
           <HorizontalBarChart
@@ -125,10 +122,6 @@ export default function Screen3A() {
 
       <div className="screen3a-bottom">
         <ScreenPanel>
-          {/* <ScreenHeader
-            title="Highest Balance"
-            subtitle="Top 3 wines by average balance"
-          /> */}
           <h2>Highest Balance</h2>
           <h3>Top 3 wines by average balance</h3>
           <VerticalBarChart
@@ -141,10 +134,10 @@ export default function Screen3A() {
         </ScreenPanel>
 
         <ScreenPanel>
-          {/* <ScreenHeader
+          <ScreenHeader
             title="Descriptors"
             subtitle="Most frequent words used during tasting"
-          /> */}
+          />
           <h2>Descriptors</h2>
           <h3>Most frequent words used during tasting</h3>
           <WordCloudChart

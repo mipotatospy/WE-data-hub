@@ -95,7 +95,7 @@ export default function BubbleChart({
               stepSize: 1,
               color: "#FFFFFF",
               font: {
-                size: 13,
+                size: 18,
               },
               callback: function (value) {
                 const index = Number(value) - 1;
@@ -110,7 +110,7 @@ export default function BubbleChart({
               text: "Price Range",
               color: "#FFFFFF",
               font: {
-                size: 14,
+                size: 19,
                 weight: "600",
               },
             },
@@ -122,7 +122,7 @@ export default function BubbleChart({
             ticks: {
               color: "#FFFFFF",
               font: {
-                size: 13,
+                size: 18,
               },
             },
             grid: {
@@ -133,7 +133,7 @@ export default function BubbleChart({
               text: "Average Enjoyment",
               color: "#FFFFFF",
               font: {
-                size: 14,
+                size: 19,
                 weight: "600",
               },
             },
@@ -148,7 +148,7 @@ export default function BubbleChart({
             text: title,
             color: "#FFFFFF",
             font: {
-              size: 16,
+              size: 21,
               weight: "600",
             },
             padding: {
